@@ -17,6 +17,34 @@ class Creature:
 
     def __str__(self):
         return f"{self.name} (HP: {self.hp})"
+# ===============================
+# FlyingCreature Branch
+# ===============================
+
+class FlyingCreature(Creature):
+    """Your code here"""
+    def __init__(self, name, hp, attack_power , altitude = 0):
+        super().__init__(name, hp, attack_power)
+        self.altitude = altitude
+    def fly_to(self,new_altitude):
+        self.altitude = new_altitude
+        
+    def attack(self, target):
+
+        if not self.is_alive():
+            print(f"{self.name} cannot attack because it is defeated.")
+            return
+        
+        print(f"Sky Hawk swoops down from altitude {self.altitude}!")
+        print(f"{self.name} performs an aerial attack on {target.name} for {self.attack_power} damage!")
+        target.hp -= self.attack_power
+        print(f"{target.name} HP is now {target.hp}")
+
+
+
+
+
+
 
 if __name__ == "__main__":
     print("=== Creature Class Tests ===\n")
@@ -66,5 +94,18 @@ if __name__ == "__main__":
     goblin.attack(slime)
     print(f"Slime should be at HP 0 → Actual: {slime.hp}")
     print()
-
     print("=== Tests Completed ===")
+    print()
+
+    print("=== FlyingCreature Tests ===\n")
+    hawk = FlyingCreature("Sky Hawk", 50, 8)
+    hawk.fly_to(120)
+    print(f"Altitude should be 120 → Actual: {hawk.altitude}")
+
+    dummy = Creature("Practice Dummy", 40, 0)
+    hawk.attack(dummy)
+    print(f"Dummy HP should be 32 → Actual: {dummy.hp}")
+    dummy.attack(hawk)
+    print()
+    print("=== Tests Completed ===")
+    print()
