@@ -25,7 +25,7 @@ I will begin with a base class (`Creature`) and create additional subclasses on 
 
 ## Project Structure
 oop_creature_code :
-- creature_simulation.py # Base class + subclasses
+- creature_simulation.py
 - README.md
 
 ## Project Structure
