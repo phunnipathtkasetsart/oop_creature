@@ -24,10 +24,9 @@ I will begin with a base class (`Creature`) and create additional subclasses on 
 ---
 
 ## Project Structure
-oop_creature_code/
-│
-├── creature_simulation.py # Base class + subclasses
-└── README.md
+oop_creature_code :
+- creature_simulation.py # Base class + subclasses
+- README.md
 
 ## Project Structure
 Click run a program , there will be **6 main** functions
